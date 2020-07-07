@@ -1,0 +1,517 @@
+
+* {
+    font-family: helvetica;
+  }
+  
+  #reviews {
+    margin: 15% 0px 5% 0px;
+  }
+  
+  /* ***STAR STLYING FOR EACH REVIEW*** */
+  
+  .starsParent {
+    position: relative;
+    margin: 5% 0 5% 0;
+  }
+  
+  .stars-outer {
+    position: absolute;
+    top: -10px;
+    display: block;
+    font-size: 13px;
+  }
+  
+  .stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+  }
+  
+  .stars-outer::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #ccc;
+  }
+  
+  .stars-inner::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #f8ce0b;
+  }
+  
+  .reviewBody {
+    margin: auto;
+    font-size: 14px;
+  }
+  
+  
+  .review-container {
+    width: 100%;
+  }
+  
+  .summary {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 1% 0px 2.5% 0px;
+  }
+  
+  .checkmark {
+    width: 2%;
+    height: 2%;
+    display: inline-block;
+  }
+  
+  .userName-Date {
+    padding: 10px 0 0;
+  }
+  
+  .checkMark-userName-date-stars {
+    text-align: right;
+    margin: 0 0 2%;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  
+  .helpfulness{
+    margin: 10px 0 0px 0;
+    display: block;
+    padding: 5px 0 0 0;
+    font-size: 12px;
+  }
+  
+  h2 {
+    text-align: left;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 25px;
+    font-weight: bold;
+  
+  }
+  
+  /* this is the horizontal line for after each review */
+  
+  hr {
+    display: block;
+    height: 1.0px;
+    border: 0;
+    border-top: 1.2px solid #ccc;
+    margin: 1em 0 2.5em;
+    padding: 0;
+    width: 100%;
+  }
+  
+  /* ***SIDEBAR*** */
+  
+  #sidebar {
+    margin-right: 20%;
+  }
+  
+  .sidebarTitle {
+    margin: 5px auto 40px auto;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+  
+  .sidebarRecommend {
+    font-size: 12px;
+    /* white-space: nowrap; */
+    margin: 0 0px 0px 0px;
+  }
+  
+  .sidebarStarNum {
+    position: relative;
+    top: -30px;
+    font-size: 60px;
+    margin: 0 0 0 0;
+  }
+  
+  
+  .sidebarAndRatings {
+    width: 100%;
+    /* display: inline-block; */
+    /* NEED MEDDIA QUERY HERE? */
+    align-items: stretch;
+  }
+  
+  /* display flex works great for PC but not mobile */
+  
+  /* Sidebar Stars */
+  
+  .sb-starsParent {
+    position: relative;
+    margin: 0px 0px 0px 0px;
+  }
+  
+  .sb-stars-outer {
+    position: absolute;
+    top: -10px;
+    left: 90px;
+    display: block;
+    font-size: 13px;
+  }
+  
+  .sb-stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    font-size: 13px;
+    margin: 0 0 0px 0;
+  }
+  
+  .sb-stars-outer::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #ccc;
+  }
+  
+  .sb-stars-inner::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #f8ce0b;
+  }
+  
+  /* STAR BARS (PRODUCT BREAKDOWN) */
+  
+  
+  /*the collection of star labels */
+  .sb-star-labels {
+    font-size: 15px;
+    margin: 7px 0 7px 0px;
+    position: absolute;
+    white-space: nowrap;
+    text-decoration: underline;
+  }
+  
+  /*each individual label i.e. 5stars: */
+  
+  .starlabel {
+    margin: 0px 0 5px 0;
+    cursor: pointer;
+  }
+  
+  /* This is just the styling for the bars */
+  .sb-star-breakdown {
+    height: 7px;
+    display: absolute;
+  background: #78b877;
+    padding: 0px 12px;
+    /* newstuff */
+    margin: 5px 0 20px 0;
+    position: inline-block;
+  }
+  
+  .bars-outer {
+    position: relative;
+    white-space: nowrap;
+    width: 80%;
+    background: #e4e4e4;
+    /* padding: 0px 12px; */
+    margin: 10px 0px 0px 53px;
+    top: 15px;
+  }
+  
+  /* SORT */
+  
+  .sort-container {
+    margin: 80px 0 40px 0;
+    font-weight: bold;
+  }
+  
+  .sort-text > a {
+    color: black;
+  }
+  
+  /* filter buttons */
+  
+  .star-button-title {
+    text-align: center;
+    margin: 10% 0px;
+    font-size: 14px;
+  }
+  
+  .star-filter-buttons {
+    /* display: none;
+    width: 220px;
+    margin: 5px 0;
+    padding: .375rem;
+    background-color: white;
+    color: black;
+    border: .5px solid black;
+    border-radius: .25rem;
+    line-height: 1.5;
+    font-size: .75rem;
+    padding: 4%;
+    text-transform: uppercase; */
+    width: 100%;
+    margin: 0px 3% 0px 10%;
+    font-size: .75rem;
+    padding: .75rem .75rem;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0px;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.5s ease;
+  
+  }
+  
+  .star-filter-buttons:hover {
+    background-color: black;
+    color: white;
+    transition: all 0.5s ease;
+  }
+  
+  /* more review / add review buttons */
+  
+  .more-reviews-button {
+    margin: 0px 0px 50px 2.5px;
+    line-height: 1.5;
+    font-size: .75rem;
+    padding: .75rem .75rem;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0px;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    white-space: nowrap;
+    text-align: center;
+    /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18); */
+  }
+  
+  .more-reviews-button:hover {
+    background-color: black;
+    color: white;
+    transition: all 0.5s ease;
+  }
+  
+  .more-reviews-button:focus {
+    outline: none;
+  }
+  
+  .btn, .btn-primary {
+    margin: 0px 3% 0px 20%;
+    font-size: .75rem;
+    padding: .75rem .75rem;
+    line-height: 1.5;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0px;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    white-space: nowrap;
+    text-align: center;
+  }
+  
+  .btn:hover, .btn-primary:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    transition: all 0.5s ease;
+  }
+  
+  .add-review-module {
+    display: inline-block;
+    margin: 0 0 15% 0;
+  }
+  
+  .minimum-message > div {
+    font-size: .75rem;
+    margin: 15px 0px 0px 0px;
+  }
+  
+  
+  /* MODAL STYLING */
+  
+  @media (min-width: 768px) {
+    .modal-xl {
+      width: 90%;
+      max-width:1024px;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+  .modal-xl {
+     width: 60%;
+     max-width:1400px;
+  }
+  }
+  
+  /* image modals */
+  
+  @media (min-width: 768px) {
+    .modal-lg {
+      width: 100%;
+      height: 100%;
+      max-width:1024px;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+  .modal-lg {
+     width: 100%;
+     height: 100%;
+     max-width:1400px;
+  }
+  }
+  
+  @media (min-width: 1401px) {
+    .modal-lg {
+       width: 100%;
+       height: 100%;
+       max-width:2200px;
+    }
+  }
+  
+  .rating {
+  cursor: pointer;
+  }
+  
+  .add-rating-stars .rating-star {
+  display: inline-block;
+  position: relative;
+  padding-right: 5px;
+  margin-left: -5px;
+  color: #f8ce0b;
+  }
+  .add-rating-stars .selected:before {
+  content: '\f005';
+  }
+  
+  /* button styling */
+  
+  
+  .btn-secondary {
+    margin: 2.5px;
+  }
+  
+  .modal-header > .modal-body, .modal-title, .close-button, .submit-button {
+    margin: 0px 20px 0px 20px;
+  }
+  
+  .modal-header > .modal-title {
+    font-size: 30px;
+  }
+  
+  .review-message-title, .input-group-text {
+    display: block;
+    white-space: nowrap;
+  }
+  
+  .modal-header > .modal-subtitle {
+    display: block;
+    font-size: 20px;
+  }
+  
+  .YesNoRadio-parent {
+    display: absolute;
+  }
+  
+  #noRadio, #yesRadio {
+    display: relative;
+    left: 150px;
+  }
+  
+  .email-privacy {
+    width: 100%;
+    display: block;
+    font-size: 12px;
+    margin: 0px;
+  }
+  
+  
+  .star-explanation {
+    display: inline-block;
+    left: 300px;
+  }
+  
+  #dropdownMenuButton {
+    margin: 3% 0 0 0;
+    padding: 1%;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0px;
+  }
+  
+  .attribute-graph {
+    margin: 30% 0px 0px 0px;
+    position: relative;
+  }
+  
+  /* the display: flex and flex: 1 attribute allow this outer bar to size itself flexibly to the child */
+  .attr-outer {
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+    background: #e4e4e4;
+    /* padding: 0px 12px; */
+    margin: 0px 0px 0px 26%;
+    top: 10px;
+    left: -25%;
+    overflow: hidden;
+    display: flex;
+    flex: 1;
+  
+  }
+  
+  /* the left amount is what will slide the triangle over */
+  
+  .attr-breakdown-comfort, .attr-breakdown-fit, .attr-breakdown-quality, .attr-breakdown-length, .attr-breakdown-size, .attr-breakdown-width {
+    position: relative;
+    width: 4%;
+    z-index: 1;
+    height: 100%;
+    /* left: 25%; */
+  }
+  
+  .attr-label {
+    position: relative;
+    /* display: block; */
+    /* top: 100px; */
+    z-index: 1;
+    margin: 3% 0px -5% 0px;
+    text-align: left;
+    font-weight: 300;
+    font-size: 1em;
+  }
+  
+  .left-to-right-explanation {
+    position: relative;
+    text-align: center;
+    font-weight: 300;
+    font-size: 14px;
+    margin: 10px 0px 0px 0px;
+    font-weight: 150;
+    font-size: .35em;
+  }
+  
+  .too-small {
+    margin: 0px 13% 0px 0px;
+  }
+  
+  .too-wide {
+    margin: 0px 0px 0px 15%;
+  }
+  
+  .reviewsSpacer {
+    margin: auto;
+  }
