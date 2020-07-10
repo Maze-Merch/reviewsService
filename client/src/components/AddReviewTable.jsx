@@ -17,7 +17,7 @@ class AddReviewTable extends Component {
 
   componentDidMount() {
     fetch('http://52.26.193.201:3000/reviews/102/meta')
-      .then(res => res.json()) 
+      .then(res => res.json())
       .then(data => this.hideRows(data));
   }
 
@@ -34,7 +34,7 @@ class AddReviewTable extends Component {
       }
     }
   }
-  
+
 
   render() {
     let { size, width, comfort, quality, length, fit } = this.state;

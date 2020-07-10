@@ -27,7 +27,7 @@ class Sidebar extends React.Component {
   }
 
   componentDidMount() {
-    fetch(' http://52.26.193.201:3000/reviews/102/list')
+    fetch('/reviews/102/list')
       .then(res => res.json())
       .then(data => this.setState({
         reviews: data.results,
@@ -114,7 +114,7 @@ class Sidebar extends React.Component {
             <div className="sidebarRecommend">
               {this.state.recommend} of reviews recommend this product
             </div>
-            
+
             <StarBars
               barPercents={barPercents}
               filter={this.props.filter}
