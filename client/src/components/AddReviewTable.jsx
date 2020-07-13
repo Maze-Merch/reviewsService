@@ -14,18 +14,19 @@ class AddReviewTable extends Component {
     }
     this.hideRows = this.hideRows.bind(this);
   }
-
+  // http://52.26.193.201:3000/reviews/4/meta
+  // http://localhost:3004/reviews/4/meta
   componentDidMount() {
-    fetch('http://52.26.193.201:3000/reviews/102/meta')
+    fetch('http://localhost:3004/reviews/4/meta')
       .then(res => res.json())
-      .then(data => this.hideRows(data));
+      .then(data => this.hideRows(data[0]));
   }
 
   hideRows(data) {
     let dataKeys = Object.keys(data.characteristics);
-    console.log(dataKeys)
+    // console.log(dataKeys)
     let stateKeys = Object.keys(this.state);
-    console.log(stateKeys)
+    // console.log(stateKeys)
     for (let i = 0; i < dataKeys.length; i++) {
       if (stateKeys.includes(dataKeys[i].toLowerCase())) {
         this.setState({

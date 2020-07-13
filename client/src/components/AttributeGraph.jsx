@@ -13,11 +13,12 @@ class AttributeGraph extends Component {
       fit: '',
     };
   }
-
+  // http://52.26.193.201:3000/reviews/4/meta
+  // http://localhost:3004/reviews/4/meta
   componentDidMount() {
-    fetch('http://52.26.193.201:3000/reviews/102/meta')
-      .then(res => res.json()) 
-      .then(data => this.createGraphs(data));
+    fetch('http://localhost:3004/reviews/4/meta')
+      .then(res => res.json())
+      .then(data => { console.log('ATTGraph', data); this.createGraphs(data[0]) });
   }
 
   //Come back to***

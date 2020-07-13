@@ -25,13 +25,16 @@ class Sidebar extends React.Component {
     this.updateEachStarBar = this.updateEachStarBar.bind(this);
     this.checkForReco = this.checkForReco.bind(this);
   }
-
+  // http://52.26.193.201:3000/reviews/4/list
+  // http://localhost:3004/reviews/4/list
   componentDidMount() {
-    fetch('/reviews/102/list')
+    fetch('http://localhost:3004/reviews/4/list')
       .then(res => res.json())
-      .then(data => this.setState({
-        reviews: data.results,
-      }))
+      .then(data => { console.log(data);
+        this.setState({
+          reviews: data[0].results,
+        })
+      })
       .then(moarData => this.averageStarRating())
       .then(smoreData => this.updateEachStarBar())
       .then(smoreSmoreData => this.checkForReco());

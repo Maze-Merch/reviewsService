@@ -26,14 +26,15 @@ class App extends Component {
     this.sortByHelpful = this.sortByHelpful.bind(this);
     this.sortByRelevant = this.sortByRelevant.bind(this);
   }
-
+  // http://52.26.193.201:3000/reviews/4/list
+  // http://localhost:3004/reviews/4/list
   componentDidMount() {
-    fetch('localhost:3004/reviews/102/list')
+    fetch('http://localhost:3004/reviews/4/list')
       .then(res => res.json())
-      .then(data => this.setState({
-        reviews: data.results,
-        filterReviews: data.results,
-      }));
+      .then(data => {console.log('APP.JSX', data[0]); this.setState({
+        reviews: data[0].results,
+        filterReviews: data[0].results,
+      })});
   }
 
   filterReviewList(e) {
@@ -164,6 +165,7 @@ class App extends Component {
 
   render() {
     const { reviews, filterReviews, hide5Stars, hide4Stars, hide3Stars, hide2Stars, hide1Stars, style } = this.state;
+    // console.log(filterReviews[0].photos[0].id)
     return (
       <div className="row container">
         <div className="d-none d-sm-block col-xl"></div>
