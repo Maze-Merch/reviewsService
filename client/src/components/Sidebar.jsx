@@ -27,7 +27,7 @@ class Sidebar extends React.Component {
   }
 
   componentDidMount() {
-    fetch(' http://52.26.193.201:3000/reviews/102/list')
+    fetch(' http://52.26.193.201:3000/reviews/1/list')
       .then(res => res.json())
       .then(data => this.setState({
         reviews: data.results,
@@ -42,7 +42,7 @@ class Sidebar extends React.Component {
     for (let i = 0; i < this.state.reviews.length; i++) {
       recommends += this.state.reviews[i].recommend
     }
-    let percentage = (recommends / this.state.reviews.length) * 100
+    let percentage = Math.floor((recommends / this.state.reviews.length) * 100)
     let percentageText = `${percentage}%`
     this.setState({
       recommend: percentageText,

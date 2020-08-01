@@ -15,7 +15,7 @@ class AttributeGraph extends Component {
   }
 
   componentDidMount() {
-    fetch('http://52.26.193.201:3000/reviews/102/meta')
+    fetch('http://52.26.193.201:3000/reviews/1/meta')
       .then(res => res.json()) 
       .then(data => this.createGraphs(data));
   }
